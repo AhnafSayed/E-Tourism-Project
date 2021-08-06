@@ -52,7 +52,7 @@
 //--Username--//
 
 
-	   if(isset($_POST["submit"]))
+	   if(isset($_POST["submit1"]))
 		{
 			if (strlen($_POST["username"])<6)
 			{
