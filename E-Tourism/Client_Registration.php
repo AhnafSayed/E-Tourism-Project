@@ -14,7 +14,7 @@
 				<tr>
 					<td><span >Username:</span></td>
 					<td></td>
-					<td><input type="text" onfocusout="checkUsername(this)" name="username" value="<?php echo $username;?>"> </td><td><span><?php echo $err_username;?></span></td>
+					<td><input type="text" onfocusout="checkUsername(this)" name="username" value="<?php echo $username;?>"> </td><td><span id="err_username"><?php echo $err_username;?></span></td>
 				</tr>
 
 				<tr>
@@ -82,7 +82,7 @@
 				<tr>
 					<td><span>Email:</span></td>
 					<td></td>
-					<td><input type="text" onfocusout="checkEmail(this)" size="25" name="email" value="<?php echo $email;?>"> </td><td><span><?php echo $err_email;?></span></td>
+					<td><input type="text" onfocusout="checkEmail(this)" size="25" name="email" value="<?php echo $email;?>"> </td><td><span id="err_email"><?php echo $err_email;?></span></td>
 				</tr>
 
 				<br>

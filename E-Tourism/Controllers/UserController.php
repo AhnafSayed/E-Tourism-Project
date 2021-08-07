@@ -1,5 +1,7 @@
 <?php
     require_once 'Models/db_config.php';
+//--Session--//
+    session_start();
 //--Sign-In--//
 	$username="";
 	$err_username="";
@@ -413,26 +415,25 @@
 	else if (isset($_POST["btn_login"])){
 		if(empty($_POST["username"])){
 			$hasError = true;
-			$err_username = "Username Required";
+			$err_username = "Username Required!";
 		}
 		else{
 			$username = $_POST["username"];
 		}
 		if(empty($_POST["password"])){
 			$hasError = true;
-			$err_password = "Password Required";
+			$err_password = "Password Required!";
 		}
 		else{
 			$password = $_POST["password"];
 		}
 		if(!$hasError){
 			if(authenticateUser($username,$password)){
-				
+				$_SESSION["loggeduser"] = $username; //--Session--//
 				header("Location: Admin_Account.php");
 			}
-			$err_db = "Username password invalid";
+			$err_db = "Username and password invalid!";
 		}
-		
 	}
 	
 	    function insertUser($username,$password,$name,$gender,$day,$month,$year,$email,$city,$state,$phone){
@@ -457,7 +458,7 @@
 	}
 	
 	    function checkUsername($username){
-		$query = "select username from clients where username='$username'";
+		$query = "select name from clients where username='$username'";
 		$rs = get($query);
 		if(count($rs) > 0){
 			return true;
@@ -466,7 +467,7 @@
 	}
 	
 	    function checkEmail($email){
-		$query = "select email from clients where username='$email'";
+		$query = "select name from clients where email='$email'";
 		$rs = get($query);
 		if(count($rs) > 0){
 			return true;

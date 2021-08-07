@@ -31,6 +31,7 @@
 				<td><h5>Don't have an account?</h5><a href="Signupoption.php"><h5>Sign Up!</h5></a></td>
 				</tr>
 			</table>
+			<h5><?php echo $err_db;?></h5> 
 	    </fieldset>
 		</form>
 		</center>
