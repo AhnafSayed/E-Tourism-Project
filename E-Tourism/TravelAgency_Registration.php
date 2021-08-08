@@ -50,7 +50,7 @@
 				<tr>
 					<td><span>Phone:</span></td>
 					<td></td>
-					<td><input type="text" name="isdcode" value="<?php echo $isdcode;?>" placeholder="ISD" size="4"><b>-</b><input type="text" name="phone" value="<?php echo $phone;?>" placeholder = "Number" size="9"> </td><td><span><?php echo $err_isdcode;?></span><span><?php echo $err_phone;?></span></td>
+					<td><input type="text" name="phone" value="<?php echo $phone;?>" placeholder = "Phone Number" size="12"> </td><td><span><?php echo $err_phone;?></span></td>
 				</tr>
 
 				<tr>
@@ -61,7 +61,7 @@
 
 				<tr>
 				<td colspan="3" align="center">
-				<input type="Submit" name="submit1" value="Register">
+				<input type="Submit" name="travelagency_signup" value="Register">
 				</td>
 				</tr>
 			</table>

@@ -3,7 +3,8 @@
 ?>
 
 <html>
-	<head></head>
+	<head><title>E-Tourism</title>
+	</head>
 	<body>
 		<center>
 		<form action="" method="post">
