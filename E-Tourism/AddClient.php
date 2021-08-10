@@ -95,7 +95,7 @@ include 'Admin_Header.php';
 			</tr>
 			<tr>
 				<td>Phone</td>
-				<td><input type="text" onfocusout="checkPhoneClient(this)" name="phone" placeholder="Phone Number" size="12" value="<?php echo $phone;?>"><td><span><?php echo $err_phone;?></span></td>
+				<td><input type="text" onfocusout="checkPhoneClient(this)" name="phone" placeholder="Phone Number" size="12" value="<?php echo $phone;?>"><td><span id="err_phone"><?php echo $err_phone;?></span></td>
 			</tr>
 		</table>
 		<input id="b3" type="submit" name="add_client" value="Add">
