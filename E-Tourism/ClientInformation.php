@@ -1,5 +1,6 @@
 <?php include 'Controllers/UserController.php';
 $client = getallClients(); 
+include 'Admin_Header.php';
 
 ?>
 <html>
@@ -10,8 +11,10 @@ $client = getallClients();
 	<form action="" method="post">
 	<center>
 		<fieldset style="width: 1000px; height: 800px;">
-		<legend align="center"><h1><b>Client Information</b></h1></legend>
-		<table>
+		<legend align="center"><h1 id="b3"><b>Client Information</b></h1></legend>
+		<p><input type="text" placeholder="🔎Search for Client!" onkeyup="searchClient(this)"></p>
+	    <p><div id="Search"></div></p>
+		<table border="2">
 			<tr>
 				<td>ID</td>
 				<td>Username</td>
@@ -43,8 +46,9 @@ $client = getallClients();
 				echo "<td>".$c["State"]."</td>";
 				echo "<td>".$c["Phone"]."</td>";
 				echo '<td><a href="UpdateClient.php?id='.$c["Id"].'"><input type="Submit" value="Update"></a></td>';
+				echo '<td><a href = "DeleteClient.php?id='.$c["Id"].'"><input type="Submit" value="Delete"></a></td>';
 				/*echo '<td><a href = "EditClients.php?Id='.$c["Id"].'"><input type="Submit" value="Update"></a></td>';
-				/*echo '<td><a href = "DeleteClients.php?id='.$c["id"].'" <input type="Submit" value="Delete"></a></td>';*/
+				/*echo '<td><a href = "DeleteClient.php?id='.$c["id"].'" <input type="Submit" value="Delete"></a></td>';*/
 				echo "</tr>";
             $i++;  
 			}
@@ -52,8 +56,10 @@ $client = getallClients();
 
 			?>
 		</table>
-		<a href="AddClient.php"><input type="Submit" value="Add Client"></a>
+		<p><a href="AddClient.php"><input id="b3" type="Submit" value="Add Client"></a></p>
 	</center>
 </form>
 </body>
 </html>
+<script src="JavaScript/SearchClient.js"></script>
+<?php include 'Admin_Footer.php';?>

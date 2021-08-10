@@ -1,4 +1,5 @@
 <?php include 'Controllers/UserController.php';
+      include 'Admin_Header.php';
    $Id = $_GET["id"];
    $c = getClient($Id)
 
@@ -14,20 +15,19 @@
 	<form action="" method="post">
 	<center>
 		<fieldset style="width: 800px; height: 500px;">
-		<legend align="center"><h1><b>Update Client</b></h1></legend>
-		<span align= 'right'><a href="ClientInformation.php">Client Information</a></span>
+		<legend align="center"><h1 id="b3"><b>Update Client</b></h1></legend>
 		<table>
 			<tr>
 				<td>Username</td>
 				<input type="hidden" name="id" value="<?php echo $c["Id"];?>">
-				<td><input type="text" onfocusout="checkUsername(this)" name="username" value="<?php echo $c["Username"];?>"><td><span id="err_username"><?php echo $err_username;?></span></td>
+				<td><input type="text" onfocusout="checkUsernameClient(this)" name="username" value="<?php echo $c["Username"];?>"><td><span id="err_username"><?php echo $err_username;?></span></td>
 			</tr>
 			<tr>
 				<td>Password</td>
 				<td><input type="password" name="password" value="<?php echo $c["Password"];?>"><td><span><?php echo $err_password;?></span></td>
 			</tr>
 			<tr>
-				<td>Name</td>
+				<td>Client Name</td>
 				<td><input type="text" name="name" value="<?php echo $c["Name"];?>"><td><span><?php echo $err_name;?></span></td>
 			</tr>
 			<tr>
@@ -48,7 +48,7 @@
 			</tr>
 			<tr>
 				<td>Email</td>
-				<td><input type="text" onfocusout="checkEmail(this)" name="email" value="<?php echo $c["Email"];?>"><td><span id="err_email"><?php echo $err_email;?></span></td>
+				<td><input type="text" onfocusout="checkEmailClient(this)" name="email" value="<?php echo $c["Email"];?>"><td><span id="err_email"><?php echo $err_email;?></span></td>
 			</tr>
 			<tr>
 				<td>City</td>
@@ -60,13 +60,16 @@
 			</tr>
 			<tr>
 				<td>Phone</td>
-				<td><input type="text" name="phone" value="<?php echo $c["Phone"];?>"><td><span><?php echo $err_phone;?></span></td>
+				<td><input type="text" onfocusout="checkPhoneClient(this)" name="phone" value="<?php echo $c["Phone"];?>"><td><span id="err_phone"><?php echo $err_phone;?></span></td>
 			</tr>
 		</table>
-		<input type="submit" name="update_client" value="Update">
+		<input id="b3" type="submit" name="update_client" value="Update">
+		<a href="ClientInformation.php"><input id="b3" type="submit" value="Cancel"></a>
 	</center>
 </form>
 </body>
 </html>
-<script src="JavaScript/CheckUsername.js"></script>
-<script src="JavaScript/CheckEmail.js"></script>
+<?php include 'Admin_Footer.php';?>
+<script src="JavaScript/CheckUsernameClient.js"></script>
+<script src="JavaScript/CheckEmailClient.js"></script>
+<script src="JavaScript/CheckPhoneClient.js"></script>

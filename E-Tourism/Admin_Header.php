@@ -1,0 +1,40 @@
+<html>
+	<head>
+	</head>
+	<style>
+	     #b1{
+	       background-color:green;
+		   color:orange;
+		   align:center;
+	      }
+		 #b2{
+			 background-color:blue;
+			 color:orange;
+			 align:center;
+		    }
+		 #b3{
+			 color:orange;
+			 background-color:black;
+		    }
+	</style>
+	<body>
+	    <center>
+	    <fieldset style="width: 1000px; height: 1100px;">
+		<legend align="center"><h1><b id="b3">Admin Dashboard</b></h1></legend>
+		<img height="100px" width="100px" src="Travel Agency.png" align="left"></a>
+		<h1><b align="center" id="b1">E-Tourism</b></h1><h1><b align="center" id="b2">Your Tour Specialist</b></h1>
+		<table align="center" border="1"> 	
+			<tr>
+			<td align="center">
+			<a href="Home.php"><input type="Submit" id="b3" value="Home"></a>
+			<a href="ClientInformation.php" align="center"><input type="Submit" id="b3" value="Client Information"></a>
+			<a href="TravelAgencyInformation.php"><input type="Submit" id="b3" value="Travel Agency Information"></a>
+			<a href="Admin_Account.php"><input type="Submit" id="b3" value="Admin Dashboard"></a>
+			<a href="AddClient.php"><input type="Submit" id="b3" value="Add Client"></a>
+			<a href="AddTravelAgency.php"><input type="Submit" id="b3" value="Add Travel Agency"></a>
+			<a href="Loginoption.php"><input type="Submit" id="b3" value="Logout"></a>
+            </td>
+            </tr>			
+        </table>			
+		</div>
+		</div>

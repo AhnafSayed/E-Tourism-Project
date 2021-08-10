@@ -1,5 +1,5 @@
 <footer class="footer">
-			<h4>© 2021 | All Rights Reserved | Powered by E-Tourism</h4>
+			<h4 align="center">© 2021 | All Rights Reserved | Powered by E-Tourism</h4>
 		</footer>
 	
 	</body>

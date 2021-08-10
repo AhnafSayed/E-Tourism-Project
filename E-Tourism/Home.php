@@ -6,8 +6,7 @@
 		<fieldset style="width:1000px; height:800px">
 		<legend align="center"><h1><b style="color:green">E-Tourism</b><br><b style="color:red">Your Tour Specialist</h1></b></legend>
 		<img height="100px" width="100px" src="Travel Agency.png" align="left">
-		<p align="right"><a href="Admin_Account.php"><b>Account</b></a></p><br>
-		<p align="right"><a href="Login.php"><b>Login</b></a></p>
+		<p align="right"><a href="Loginoption.php"><b>Login</b></a></p>
 		<table> 		
 				<tr>
 				<td align="center">

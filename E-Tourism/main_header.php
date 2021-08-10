@@ -1,15 +1,21 @@
 <html>
 
-	<head>
+	<head><title>E-Tourism</title>
 	</head>
 	<style>
 	     #b1{
-	       background-color:pink;
+	       background-color:green;
 		   color:orange;
+		   align:center;
 	      }
 		 #b2{
-			 background-color:pink;
+			 background-color:blue;
 			 color:orange;
+			 align:center;
+		    }
+		 #b3{
+			 color:orange;
+			 background-color:black;
 		    }
 	</style>
 	<body>
@@ -19,6 +25,6 @@
 		
 			<div class="pull-right">
 				<a class="btn btn-success" <b align="right" href="Home.php">Home</b></a>
-				<a class="btn btn-danger" <b align="right" href="Login.php">Login</b></a>
+				<a class="btn btn-danger" <b align="right" href="Loginoption.php">Login</b></a>
 			</div>
 		</div>

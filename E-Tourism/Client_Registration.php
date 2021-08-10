@@ -9,13 +9,13 @@
 		<center>
 		<form action="" method="post">
 		<fieldset style="width: 800px; height: 500px;">
-		<legend align="center"><h1><b>Client Registration</b></h1></legend>
+		<legend align="center"><h1 id="b3"><b>Client Registration</b></h1></legend>
 			<table>
 
 				<tr>
 					<td><span >Username:</span></td>
 					<td></td>
-					<td><input type="text" onfocusout="checkUsername(this)" name="username" value="<?php echo $username;?>"> </td><td><span id="err_username"><?php echo $err_username;?></span></td>
+					<td><input type="text" onfocusout="checkUsernameClient(this)" name="username" value="<?php echo $username;?>"> </td><td><span id="err_username"><?php echo $err_username;?></span></td>
 				</tr>
 
 				<tr>
@@ -83,7 +83,7 @@
 				<tr>
 					<td><span>Email:</span></td>
 					<td></td>
-					<td><input type="text" onfocusout="checkEmail(this)" size="25" name="email" value="<?php echo $email;?>"> </td><td><span id="err_email"><?php echo $err_email;?></span></td>
+					<td><input type="text" onfocusout="checkEmailClient(this)" size="25" name="email" value="<?php echo $email;?>"> </td><td><span id="err_email"><?php echo $err_email;?></span></td>
 				</tr>
 
 				<br>
@@ -115,12 +115,12 @@
 				<tr>
 					<td><span>Phone:</span></td>
 					<td></td>
-					<td><input type="text" name="phone" value="<?php echo $phone;?>" placeholder = "Phone Number" size="12"> </td><td><span><?php echo $err_phone;?></span></td>
+					<td><input type="text" onfocusout="checkPhoneClient(this)" name="phone" value="<?php echo $phone;?>" placeholder = "Phone Number" size="12"> </td><td><span id="err_phone"><?php echo $err_phone;?></span></td>
 				</tr>
 
 				<tr>
 				<td colspan="3" align="center">
-				<input type="Submit" name="client_signup" value="Register">
+				<input id="b3" type="Submit" name="client_signup" value="Register">
 				</td>
 				</tr>
 			</table>
@@ -129,6 +129,7 @@
 		</center>
 	</body>
 </html>
-<script src="JavaScript/CheckUsername.js"></script>
-<script src="JavaScript/CheckEmail.js"></script>
+<script src="JavaScript/CheckUsernameClient.js"></script>
+<script src="JavaScript/CheckEmailClient.js"></script>
+<script src="JavaScript/CheckPhoneClient.js"></script>
 <?php include 'main_footer.php';?>
