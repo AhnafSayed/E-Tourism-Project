@@ -202,7 +202,7 @@
             if(!$hasError){
 			$rs = insertTravelAgency($username,$password,$name,$email,$phone,$etin);
 			if ($rs === true){
-				header("Location: Login.php");
+				header("Location: TravelAgencyLogin.php");
 			}
 			$err_db = $rs;
 		}			
@@ -1139,7 +1139,7 @@
 			if(!$hasError){
 			$rs = insertUser($username,$password,$name,$gender,$day,$month,$year,$email,$city,$state,$phone);
 			if ($rs === true){
-				header("Location: Login.php");
+				header("Location: ClientLogin.php");
 			}
 			$err_db = $rs;
 		}
