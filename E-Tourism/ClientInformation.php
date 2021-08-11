@@ -45,8 +45,8 @@ include 'Admin_Header.php';
 				echo "<td>".$c["City"]."</td>";
 				echo "<td>".$c["State"]."</td>";
 				echo "<td>".$c["Phone"]."</td>";
-				echo '<td><a href="UpdateClient.php?id='.$c["Id"].'"><input type="Submit" value="Update"></a></td>';
-				echo '<td><a href = "DeleteClient.php?id='.$c["Id"].'"><input type="Submit" value="Delete"></a></td>';
+				echo '<td><a href="UpdateClient.php?id='.$c["Id"].'"><input id="b3" type="Submit" value="Update"></a></td>';
+				echo '<td><a href = "DeleteClient.php?id='.$c["Id"].'"><input id="b3" type="Submit" value="Delete"></a></td>';
 				/*echo '<td><a href = "EditClients.php?Id='.$c["Id"].'"><input type="Submit" value="Update"></a></td>';
 				/*echo '<td><a href = "DeleteClient.php?id='.$c["id"].'" <input type="Submit" value="Delete"></a></td>';*/
 				echo "</tr>";

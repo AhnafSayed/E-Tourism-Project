@@ -43,6 +43,10 @@
     $etin="";
 	$err_etin="";
 	
+//--Admin Profile--//
+    $address="";
+	$err_address="";
+	
 	
 	
 	$err_db="";
@@ -1170,10 +1174,154 @@
 				$_SESSION["loggeduser"] = $username; //--Session--//
 				header("Location: Admin_Account.php");
 			}
+			if(authenticateAdmin($username,$password)){
+				setcookie("loggeduser1",$username,time()+300,"/");
+				header("Location: Admin_Account.php"); //--Cookie--//
+			}
 			$err_db = "Username and password invalid!";
 		}
 	}
 	
+//--Admin Profile--//
+
+     if(isset($_POST["update_admin"]))
+		{   
+	
+//--Username--//
+            
+			if(empty($_POST["username"]))
+			{
+			    $hasError = true;
+			    $err_username="A admin username required!";
+		    }
+			elseif (strlen($_POST["username"])<6)
+			{
+				$hasError=true;
+				$err_username=" Admin username length must contain 6 characters!";
+			}
+			elseif(strpos($_POST["username"]," "))
+			{
+				$hasError=true;
+				$err_username="Space is not allowed!";
+			}
+			else
+			{
+				$username=$_POST["username"];
+			}
+
+
+//--Password--//
+
+			if(empty($_POST["password"]))
+			 {
+			  $hasError = true;
+			  $err_password="A password required!";
+		     }
+			 elseif(strlen($_POST["password"])<9)
+			 {
+                 $hasError=true;
+				 $err_password="Password character length must be 9!";
+		     }
+			 elseif(!strpos($_POST["password"],"#"))
+			 {
+               $hasError=true;
+			   $err_password="Password should contain special character";
+		     }
+		     elseif(strpos($_POST["password"]," "))
+		     {
+                $hasError=true;
+			    $err_password="Password must not contain space!";
+		     }
+			 else
+			 {
+				 $password=$_POST["password"];
+			 }
+			 
+			 
+//--Name--//
+
+			if (empty($_POST["name"]))
+			{
+				$hasError=true;
+				$err_name="Admin name required!";
+			}
+			elseif (strlen($_POST["name"])<2)
+			{
+				$hasError=true;
+				$err_name="Admin name length must be 2 characters or more!";
+			}
+			else
+			{
+				$name=$_POST["name"];
+			}
+
+
+//--Email--//
+			
+			if(strpos($_POST["email"],"@"))
+			{if(strpos($_POST["email"],"."))
+			$email=$_POST["email"];
+			}
+
+			elseif (strlen($_POST["email"])<6)
+			{
+				$hasError=true;
+				$err_email="Email character length must be 6 or above!";
+			} 
+
+			elseif(strpos($_POST["email"]," "))
+			{
+				$hasError=true;
+				$err_email="Space is not allowed in Email!";
+			}
+			else {
+				   $err_email="Email must contain '@' and '.'!";
+				 }
+
+
+
+//--Phone--//
+            
+			if(empty($_POST["phone"]))
+			{
+			  $hasError = true;
+			  $err_phone="Admin phone number required!";
+		    }
+			
+			elseif(!is_numeric($_POST["phone"]))
+			{
+				$hasError=true;
+				$err_phone="Phone number should be numeric only!";
+			}
+
+			elseif (strlen($_POST["phone"])<11)
+			{
+				$hasError=true;
+				$err_phone="Phone number length must be 11!";
+			} 
+			else $phone=$_POST["phone"];
+
+//--Address--//
+
+            if(empty($_POST["address"]))
+			{
+			  $hasError = true;
+			  $err_address="A address required!";
+		    } 
+			else
+			{				
+				$address=$_POST["address"];
+			}
+            if(!$hasError){
+			$rs = updateAdminInfo($username,$password,$name,$email,$phone,$address,$_POST["id"]);
+			if ($rs === true){
+				header("Location: Admin_Profile.php");
+			}
+			$err_db = $rs;
+		}			
+	}
+
+
 	
 //--Client Login--//
      
@@ -1229,6 +1377,28 @@
 		}
 	}
 	
+
+//Admin Functions--//
+
+        function getallAdminInfo(){
+			$query = "select * from admin";
+			$rs = get($query);
+			return $rs;
+	}
+	
+	
+	    function getAdmin($id){
+			$query = "select * from admin where id= $id";
+			$rs = get($query);
+			return $rs[0];
+	}
+	
+		
+		function updateAdminInfo($username,$password,$name,$email,$phone,$address,$id){
+			$query = "update admin set username='$username',password='$password',name='$name',email='$email',phone='$phone',address='$address' where id= $id";
+			return execute($query);
+	}
+
 
 //--Client Functions--//	
 

@@ -1,3 +1,9 @@
+<?php 
+	if(!isset($_COOKIE["loggeduser1"])){
+		header("Location: AdminLogin.php");
+	}
+?>
+
 <html>
 	<head>
 	</head>
@@ -26,13 +32,12 @@
 		<table align="center" border="1"> 	
 			<tr>
 			<td align="center">
-			<a href="Home.php"><input type="Submit" id="b3" value="Home"></a>
 			<a href="ClientInformation.php" align="center"><input type="Submit" id="b3" value="Client Information"></a>
 			<a href="TravelAgencyInformation.php"><input type="Submit" id="b3" value="Travel Agency Information"></a>
 			<a href="Admin_Account.php"><input type="Submit" id="b3" value="Admin Dashboard"></a>
 			<a href="AddClient.php"><input type="Submit" id="b3" value="Add Client"></a>
 			<a href="AddTravelAgency.php"><input type="Submit" id="b3" value="Add Travel Agency"></a>
-			<a href="Loginoption.php"><input type="Submit" id="b3" value="Logout"></a>
+			<a href="AdminLogin.php"><input type="Submit" id="b3" value="Logout"></a>
             </td>
             </tr>			
         </table>			
