@@ -1,6 +1,8 @@
 <?php 
       require_once 'Models/db_config.php';
 
+      session_start();
+
       $transport='';
       $err_transport='';
       $meal='';
@@ -72,15 +74,6 @@
 				$hotel=$_POST["hotel"];
 			}
 
-		if (empty($_POST["hotel_pic"]))
-			{
-				$hasError=true;
-				$err_hotelPic="Hotel Picture required!";
-			}
-			else
-			{
-				$hotelPic=$_POST["hotel_pic"];
-			}
 
 		if (empty($_POST["hotel_room"]))
 			{
@@ -93,7 +86,12 @@
 			}
 
 			if(!$hasError){
-			$rs = insertPackages($transport,$meal,$price,$location,$hotel,$hotelPic,$room);
+
+				$filetype = strtolower(pathinfo(basename($_FILES["hotel_pic"]["name"]),PATHINFO_EXTENSION));
+		$target = 'Storage/package_images/'.uniqid().".$filetype";
+		move_uploaded_file($_FILES["hotel_pic"]["tmp_name"], $target);
+
+			$rs = insertPackages($transport,$meal,$price,$location,$hotel,$target,$room);
 			if ($rs === true){
 				header("Location: Packages.php");
 			}
@@ -153,16 +151,6 @@
 				$hotel=$_POST["hotel"];
 			}
 
-		if (empty($_POST["hotel_pic"]))
-			{
-				$hasError=true;
-				$err_hotelPic="Hotel Picture required!";
-			}
-			else
-			{
-				$hotelPic=$_POST["hotel_pic"];
-			}
-
 		if (empty($_POST["hotel_room"]))
 			{
 				$hasError=true;
@@ -174,13 +162,30 @@
 			}
 
 		if(!$hasError){
-			$rs = editPackages($transport,$meal,$price,$location,$hotel,$hotelPic,$room,$_POST["id"]);
+			$filetype = strtolower(pathinfo(basename($_FILES["hotel_pic"]["name"]),PATHINFO_EXTENSION));
+		$target = 'Storage/package_images/'.uniqid().".$filetype";
+		move_uploaded_file($_FILES["hotel_pic"]["tmp_name"], $target);
+
+			$rs = editPackages($transport,$meal,$price,$location,$hotel,$target,$room,$_POST["id"]);
 			if ($rs === true){
 				header("Location: Packages.php");
 			}
 			$err_db = $rs;
 		}	
 		
+	}
+
+	else if (isset($_POST["delete_package"])) {
+
+		if(!$hasError){
+		$rs = deletePackage($_GET["id"]);
+		if ($rs === true){
+			header("Location: Packages.php");
+		}
+		$err_db = $rs;
+
+	}
+
 	}
 
 		function insertPackages($transport,$meal,$price,$location,$hotel,$hotelPic,$room){
@@ -203,6 +208,12 @@
 		function editPackages($transport,$meal,$price,$location,$hotel,$hotelPic,$room,$id){
 			$query = "update packages set transport='$transport',meal='$meal',price='$price',location='$location',hotel='$hotel',hotelPic='$hotelPic',room='$room' where id= $id";
 			return execute($query);
+		}
+
+		function deletePackage($id){
+			$query = "delete from packages where id = $id ";
+			return execute($query);
+
 		}
 
 

@@ -2,6 +2,9 @@
       include 'Admin_Header.php';
    $Id = $_GET["id"];
    $a = getAdmin($Id)
+   if(!isset($_SESSION["loggeduser"])){
+		header("Location: AdminLogin.php");
+	}	 
 
  ?>
 

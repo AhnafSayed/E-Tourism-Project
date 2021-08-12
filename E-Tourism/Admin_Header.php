@@ -37,7 +37,9 @@
 			<a href="Admin_Account.php"><input type="Submit" id="b3" value="Admin Dashboard"></a>
 			<a href="AddClient.php"><input type="Submit" id="b3" value="Add Client"></a>
 			<a href="AddTravelAgency.php"><input type="Submit" id="b3" value="Add Travel Agency"></a>
-			<a href="AdminLogin.php"><input type="Submit" id="b3" value="Logout"></a>
+		<form action="AdminLogout.php" method="post">	
+			<input id="b3" type="Submit" name="Admin_Logout" value="Logout">
+		</form>	
             </td>
             </tr>			
         </table>			

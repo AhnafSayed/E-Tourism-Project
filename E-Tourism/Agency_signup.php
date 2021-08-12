@@ -1,4 +1,4 @@
-<?php include 'Controllers/UserController.php';
+<?php include 'Controllers/UserController.php'
 include 'main_header.php';
 ?>
 
@@ -50,7 +50,7 @@ include 'main_header.php';
 				<tr>
 					<td><span>Phone:</span></td>
 					<td></td>
-					<td><input type="text" name="phone" value="<?php echo $phone;?>" size="9"> </td><td><span><?php echo $err_isdcode;?></span><span><?php echo $err_phone;?></span></td>
+					<td><input type="text" name="isdcode" value="<?php echo $isdcode;?>" placeholder="ISD" size="4"><b>-</b><input type="text" name="phone" value="<?php echo $phone;?>" placeholder = "Number" size="9"> </td><td><span><?php echo $err_isdcode;?></span><span><?php echo $err_phone;?></span></td>
 				</tr>
 
 				<tr>

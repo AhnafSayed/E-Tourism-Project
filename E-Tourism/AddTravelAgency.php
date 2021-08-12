@@ -1,5 +1,10 @@
 <?php include 'Controllers/UserController.php';
-      include 'Admin_Header.php';?>
+      include 'Admin_Header.php';
+	  
+	  if(!isset($_SESSION["loggeduser"])){
+		header("Location: AdminLogin.php");
+	}	 
+?>
 
 
 <html>

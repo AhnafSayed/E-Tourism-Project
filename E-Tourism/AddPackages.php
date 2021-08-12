@@ -1,4 +1,9 @@
-<?php include 'Controllers/PackageController.php'; ?>
+<?php require_once 'Controllers/PackageController.php';
+require_once 'Agency_header.php';
+if(!isset($_SESSION["loggeduser"])){
+  	header("Location: Loginoption.php");
+  }
+ ?>
 
 
 <html>
@@ -8,7 +13,7 @@
 </head>
 <body>
 	<h5><?php echo $err_db;?></h5>
-	<form action="" method="post">
+	<form action="" method="post" enctype="multipart/form-data">
 	<center>
 		<fieldset style="width: 800px; height: 350px;">
 		<legend align="center"><h1><b>Add Packages</b></h1></legend>
@@ -38,7 +43,7 @@
 			<tr>
 				<td>Picture</td>
 				
-				<td><input type="text" name="hotel_pic" value="<?php echo $hotelPic;?>"><td><span><?php echo $err_hotelPic;?></span></td>
+				<td><input type="file" name="hotel_pic" value="<?php echo $hotelPic;?>"><td><span><?php echo $err_hotelPic;?></span></td>
 			</tr>
 			<tr>
 				<td>Room</td>

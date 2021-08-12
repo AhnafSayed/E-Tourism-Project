@@ -1,5 +1,11 @@
-<?php include 'Controllers/PackageController.php';
-$package = getallPackages(); 
+<?php require_once 'Controllers/PackageController.php';
+require_once 'Agency_Header.php';
+if(!isset($_SESSION["loggeduser"])){
+  	header("Location: Loginoption.php");
+  }
+
+$package = getallPackages();
+
 
 ?>
 
@@ -10,9 +16,10 @@ $package = getallPackages();
 	<title></title>
 </head>
 <body>
+	<h5><?php echo $err_db;?></h5>
 	<form action="" method="post">
 	<center>
-		<fieldset style="width: 800px; height: 500px;">
+		<fieldset style="width: 800px; height: 1500px;">
 		<legend align="center"><h1><b>Packages</b></h1></legend>
 		<table>
 			<tr>
@@ -35,14 +42,13 @@ $package = getallPackages();
 				echo "<td>".$p["price"]."</td>";
 				echo "<td>".$p["location"]."</td>";
 				echo "<td>".$p["hotel"]."</td>";
-				echo "<td>".$p["hotelPic"]."</td>";
+				echo "<td><img width='80px' height='100px' src='".$p["hotelPic"]."'</td>";
 				echo "<td>".$p["room"]."</td>";
-				echo '<td><a href = "EditPackages.php?id='.$p["id"].'" class="btn btn-success">Edit</a></td>';
-				echo '<td><class="btn btn-danger">Delete</a></td>';
+				echo '<td><a href = "EditPackages.php?id='.$p["id"].'">Update</a></td>';
+				echo '<td><a href = "DeletePackage.php?id='.$p["id"].'">Delete</td>';
 				echo "</tr>";
             $i++;  
 			}
-
 
 			?>
 		</table>
@@ -51,3 +57,5 @@ $package = getallPackages();
 </form>
 </body>
 </html>
+
+<?php require_once 'Agency_Footer.php';?>

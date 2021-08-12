@@ -1,6 +1,9 @@
 <?php include 'Controllers/UserController.php';
 $admin = getallAdminInfo(); 
 include 'Admin_Header.php';
+if(!isset($_SESSION["loggeduser"])){
+		header("Location: AdminLogin.php");
+	}	 
 
 ?>
 <html>

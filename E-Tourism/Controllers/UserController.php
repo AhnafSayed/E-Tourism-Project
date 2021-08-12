@@ -52,6 +52,9 @@
 	$err_db="";
 	
 	$hasError=false;
+	
+	
+//--PHP Validations--//
 
 //--Travel Agency--//
 
@@ -1150,37 +1153,6 @@
 	}
 	
 	
-//--Login--//
-
-//--Admin Login--//
-	
-	if (isset($_POST["admin_login"])){
-		if(empty($_POST["username"])){
-			$hasError = true;
-			$err_username = "Username Required!";
-		}
-		else{
-			$username = $_POST["username"];
-		}
-		if(empty($_POST["password"])){
-			$hasError = true;
-			$err_password = "Password Required!";
-		}
-		else{
-			$password = $_POST["password"];
-		}
-		if(!$hasError){
-			if(authenticateAdmin($username,$password)){
-				$_SESSION["loggeduser"] = $username; //--Session--//
-				header("Location: Admin_Account.php");
-			}
-			if(authenticateAdmin($username,$password)){
-				setcookie("loggeduser1",$username,time()+300,"/");
-				header("Location: Admin_Account.php"); //--Cookie--//
-			}
-			$err_db = "Username and password invalid!";
-		}
-	}
 	
 //--Admin Profile--//
 
@@ -1322,6 +1294,38 @@
 	}
 
 
+//--Login--//
+
+//--Admin Login--//
+	
+	if (isset($_POST["admin_login"])){
+		if(empty($_POST["username"])){
+			$hasError = true;
+			$err_username = "Username Required!";
+		}
+		else{
+			$username = $_POST["username"];
+		}
+		if(empty($_POST["password"])){
+			$hasError = true;
+			$err_password = "Password Required!";
+		}
+		else{
+			$password = $_POST["password"];
+		}
+		if(!$hasError){
+			if(authenticateAdmin($username,$password)){
+				$_SESSION["loggeduser"] = $username; //--Session--//
+				header("Location: Admin_Account.php");
+			}
+			if(authenticateAdmin($username,$password)){
+				setcookie("loggeduser1",$username,time()+300,"/");
+				header("Location: Admin_Account.php"); //--Cookie--//
+			}
+			$err_db = "Username or password maybe incorrect!";
+		}
+	}
+
 	
 //--Client Login--//
      
@@ -1345,13 +1349,12 @@
 				setcookie("loggeduser",$username,time()+300,"/");
 				header("Location: Client_Account.php"); //--Cookie--//
 			}
-			$err_db = "Username and password invalid!";
+			$err_db = "Username or password maybe incorrect!";
 		}
 	}
 	
 
 //--Travel Agency Login--//
-
 
     if (isset($_POST["travelagency_login"])){
 		if(empty($_POST["username"])){
@@ -1373,7 +1376,7 @@
 				setcookie("loggeduser",$username,time()+300,"/");
 				header("Location: TravelAgency_Account.php"); //--Cookie--//
 			}
-			$err_db = "Username and password invalid!";
+			$err_db = "Username or password maybe incorrect!";
 		}
 	}
 	
