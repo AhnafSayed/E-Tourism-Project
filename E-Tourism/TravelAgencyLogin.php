@@ -5,10 +5,9 @@
 	<head></head>
 	<body>
 		<center>
-			<h5><?php echo $err_db;?></h5>
 		<form action="" method="post">
-		<fieldset style="width:270px" "height:300px">
-		<legend align="center"><h1><b>Login</b></h1></legend>
+		<fieldset style="width:500px" "height:300px">
+		<legend align="center"><h1><b id="b3">Travel Agency Login</b></h1></legend>
 			<table>			
 				<tr>
 					<td><span>Username:</span></td>
@@ -23,14 +22,15 @@
 				</tr>
 				<tr>
 				<td colspan="3" align="center">
-				<input name="travelagency_login" type="Submit" value="Login">
+				<input id="b3" name="travelagency_login" type="Submit" value="Login">
 				</td>
 				</tr>
 				<br>
 				<tr>
-				<td><h5>Don't have an account?</h5><a href="Signupoption.php"><h5>Sign Up!</h5></a></td>
+				<td><h5>Don't have an account?</h5><a href="TravelAgency_Registration.php"><input id="b3" type="submit" value="Sign Up!"></h5></a></td>
 				</tr>
 			</table>
+			<h5><?php echo $err_db;?></h5>
 	    </fieldset>
 		</form>
 		</center>

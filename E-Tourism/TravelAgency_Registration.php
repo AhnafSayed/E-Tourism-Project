@@ -8,8 +8,8 @@ include 'main_header.php';
 		<center>
 			<h5><?php echo $err_db?></h5>
 		<form action="" method="post">
-		<fieldset style="width: 800px; height: 300px;">
-		<legend align="center"><h1><b>Travel Agency Registration</b></h1></legend>
+		<fieldset style="width: 800px; height: 350px;">
+		<legend align="center"><h1><b id="b3">Travel Agency Registration</b></h1></legend>
 			<table>
 
 				<tr>
@@ -61,7 +61,7 @@ include 'main_header.php';
 
 				<tr>
 				<td colspan="3" align="center">
-				<input type="Submit" name="submit1" value="Register">
+				<input id="b3" type="Submit" name="travelagency_signup" value="Register">
 				</td>
 				</tr>
 			</table>

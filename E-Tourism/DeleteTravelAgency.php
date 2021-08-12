@@ -2,6 +2,9 @@
 include 'Admin_Header.php';
 require_once 'Controllers/UserController.php';
 $Id= $_GET['id'];
+if(!isset($_SESSION["loggeduser"])){
+	header("Location: AdminLogin.php");
+}
 
 ?>
 

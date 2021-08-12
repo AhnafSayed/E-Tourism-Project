@@ -27,7 +27,7 @@
 	    <center>
 	    <fieldset style="width: 1000px; height: 1100px;">
 		<legend align="center"><h1><b id="b3">Admin Dashboard</b></h1></legend>
-		<img height="100px" width="100px" src="Travel Agency.png" align="left"></a>
+		<img height="100px" width="100px" src="Storage/Header_image/Travel Agency.png" align="left"></a>
 		<h1><b align="center" id="b1">E-Tourism</b></h1><h1><b align="center" id="b2">Your Tour Specialist</b></h1>
 		<table align="center" border="1"> 	
 			<tr>
@@ -37,11 +37,11 @@
 			<a href="Admin_Account.php"><input type="Submit" id="b3" value="Admin Dashboard"></a>
 			<a href="AddClient.php"><input type="Submit" id="b3" value="Add Client"></a>
 			<a href="AddTravelAgency.php"><input type="Submit" id="b3" value="Add Travel Agency"></a>
-		<form action="AdminLogout.php" method="post">	
+			<form action="AdminLogout.php" method="post">	
 			<input id="b3" type="Submit" name="Admin_Logout" value="Logout">
-		</form>	
+		    </form>		
             </td>
-            </tr>			
+            </tr>		
         </table>			
 		</div>
 		</div>

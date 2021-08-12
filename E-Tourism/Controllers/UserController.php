@@ -1346,8 +1346,8 @@
 		}
 		if(!$hasError){
 			if(authenticateClient($username,$password)){
-				setcookie("loggeduser",$username,time()+300,"/");
-				header("Location: Client_Account.php"); //--Cookie--//
+				setcookie("loggeduser",$username,time()+300,"/"); //--Cookie--//
+				header("Location: Client_Account.php"); 
 			}
 			$err_db = "Username or password maybe incorrect!";
 		}
@@ -1373,8 +1373,12 @@
 		}
 		if(!$hasError){
 			if(authenticateTravelAgency($username,$password)){
-				setcookie("loggeduser",$username,time()+300,"/");
-				header("Location: TravelAgency_Account.php"); //--Cookie--//
+				setcookie("loggeduser",$username,time()+300,"/"); //--Cookie--//
+				header("Location: TravelAgencyDashboard.php"); 
+			}
+			if(authenticateTravelAgency($username,$password)){
+				$_SESSION["loggeduser"] = $username; //--Session--//
+				header("Location: TravelAgencyDashboard.php");
 			}
 			$err_db = "Username or password maybe incorrect!";
 		}

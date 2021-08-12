@@ -29,7 +29,7 @@
 				</tr>
 				<br>
 				<tr>
-				<td><h5>Don't have an account?</h5><a href="Signupoption.php"><input id="b3" type="submit" value="Sign Up!"></h5></a></td>
+				<td><h5>Don't have an account?</h5><a href="Client_Registration.php"><input id="b3" type="submit" value="Sign Up!"></h5></a></td>
 				</tr>
 			</table>
 			<h5><?php echo $err_db;?></h5> 
