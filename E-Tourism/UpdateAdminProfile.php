@@ -1,7 +1,7 @@
 <?php include 'Controllers/UserController.php';
       include 'Admin_Header.php';
    $Id = $_GET["id"];
-   $a = getAdmin($Id)
+   $a = getAdmin($Id);
    if(!isset($_SESSION["loggeduser"])){
 		header("Location: AdminLogin.php");
 	}	 
@@ -14,7 +14,6 @@
 	<title>E-Tourism</title>
 </head>
 <body>
-	<h5><?php echo $err_db;?></h5>
 	<form action="" method="post">
 	<center>
 		<fieldset style="width: 800px; height: 500px;">
@@ -46,6 +45,7 @@
 				<td><input type="text" name="address" value="<?php echo $a["Address"];?>"><td><span><?php echo $err_address;?></span></td>
 			</tr>
 		</table>
+		<h5><?php echo $err_db;?></h5>
 		<input id="b3" type="submit" name="update_admin" value="Update">
 		<a href="Admin_Profile.php"><input id="b3" type="submit" value="Cancel"></a>
 	</center>

@@ -1,7 +1,7 @@
 <?php include 'Controllers/UserController.php';
       include 'Admin_Header.php';
    $Id = $_GET["id"];
-   $c = getClient($Id)
+   $c = getClient($Id);
    if(!isset($_SESSION["loggeduser"])){
 		header("Location: AdminLogin.php");
 	}	 
@@ -14,8 +14,7 @@
 	<title>E-Tourism</title>
 </head>
 <body>
-	<h5><?php echo $err_db;?></h5>
-	<form action="" method="post">
+	<form action="" onsubmit="return validateupdateClient()" method="post">
 	<center>
 		<fieldset style="width: 800px; height: 500px;">
 		<legend align="center"><h1 id="b3"><b>Update Client</b></h1></legend>
@@ -66,6 +65,7 @@
 				<td><input type="text" onfocusout="checkPhoneClient(this)" name="phone" value="<?php echo $c["Phone"];?>"><td><span id="err_phone"><?php echo $err_phone;?></span></td>
 			</tr>
 		</table>
+		<h5><?php echo $err_db;?></h5>
 		<input id="b3" type="submit" name="update_client" value="Update">
 		<a href="ClientInformation.php"><input id="b3" type="submit" value="Cancel"></a>
 	</center>

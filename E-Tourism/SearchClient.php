@@ -1,5 +1,5 @@
 <?php
-	include 'controllers/UserController.php';
+	include 'Controllers/UserController.php';
 	$clientkey = $_GET["clientkey"];
 	$client1 = searchClient($clientkey);
 	
