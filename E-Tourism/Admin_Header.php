@@ -22,6 +22,12 @@
 			 color:orange;
 			 background-color:black;
 		    }
+		body{
+             background-image: url('Storage/Header_image/Keokradong.jpg');
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-size: 100% 100%;
+            }
 	</style>
 	<body>
 	    <center>
@@ -34,6 +40,7 @@
 			<td align="center">
 			<a href="ClientInformation.php" align="center"><input type="Submit" id="b3" value="Client Information"></a>
 			<a href="TravelAgencyInformation.php"><input type="Submit" id="b3" value="Travel Agency Information"></a>
+			<a href="HotelInformation.php"><input type="Submit" id="b3" value="Hotel Information"></a>
 			<a href="Admin_Account.php"><input type="Submit" id="b3" value="Admin Dashboard"></a>
 			<a href="AddClient.php"><input type="Submit" id="b3" value="Add Client"></a>
 			<a href="AddTravelAgency.php"><input type="Submit" id="b3" value="Add Travel Agency"></a>

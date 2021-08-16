@@ -1,56 +1,63 @@
-<?php require_once 'Agency_Header.php';
+<?php 
+require_once	'Models/db_config.php';
+require_once 'Agency_Header.php';
 session_start();
 if(!isset($_SESSION["loggeduser"])){
   	header("Location: Loginoption.php");
   }
+  /*$id = $_GET['id'];
+  $query = "select * from travel_agency where id = '$id'";
+  $result = get($query);*/
+
+
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>My profile</title>
+	<title>E-Tourism</title>
 </head>
 <body>
 	<center>
 
-	<table border="1">
-		<tr>
-			<td>Name:</td>
-			<td>Farhan Hassan Jabil</td>
-		</tr>
-		<tr>
-			<td>Worker Id: </td>
-			<td>0001</td>
-		</tr>
-		<tr>
-			<td>Username: </td>
-			<td>FarhanJabil</td>
-		</tr>
-		<tr>
-			<td>Password: </td>
-			<td>135790</td>
-		</tr>
-		<tr>
-			<td>Email</td>
-			<td>Farhanhasan295@gmail.com</td>
-		</tr>
-		<tr>
-			<td>Address:</td>
-			<td>Uttara,Dhaka</td>
-		</tr>
-		<tr>
-			<td>Phone:</td>
-			<td>016*******</td>
-		</tr>
-		<tr>
-			<td>Salary:</td>
-			<td>15000 taka</td>
-		</tr>
-		<tr>
-			<td>Joining Date:</td>
-			<td>01/07/2021</td>
-		</tr>
+	<table border="2">
+  <tr>
+ <td>ID</td>
+ <td>NAME</td>
+<td>USERNAME</td>
+<td>Email</td>
+<td>PHONE NUMBER</td>
+<td>ETIN NUMBER</td>
+
+</tr>
+
+<tr>
+ <td>01</td>
+ <td>ABC TRAVELS</td>
+<td>abctra001</td>
+<td>abctravel07@hotmial.com</td>
+<td>1641991515</td>
+<td>123456</td>
+
+</tr>
+
+
+<!--<?php
+			$i = 1;
+			foreach ($result as $r) {
+				echo "<tr>"; 
+				echo "<td>".$r["id"]."</td>";
+				echo "<td>".$r["name"]."</td>";
+				echo "<td>".$r["username"]."</td>";
+				echo "<td>".$r["email"]."</td>";
+				echo "<td>".$r["phone"]."</td>";
+				echo "<td>".$r["etin"]."</td>";
+            $i++;  
+			}
+
+			?>-->
 		
 	</table>
 

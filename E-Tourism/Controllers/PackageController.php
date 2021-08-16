@@ -198,6 +198,12 @@
 			$rs = get($query);
 			return $rs;
 		}
+		
+		function getallHotels(){
+			$query = "select * from packages";
+			$rs = get($query);
+			return $rs;
+		}
 
 		function getPackage($id){
 			$query = "select * from packages where id= $id";
@@ -213,7 +219,6 @@
 		function deletePackage($id){
 			$query = "delete from packages where id = $id ";
 			return execute($query);
-
 		}
 
 

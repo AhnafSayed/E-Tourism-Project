@@ -19,6 +19,8 @@ $location = getallLocation();
 	<center>
 		<fieldset style="width: 800px; height: 1500px;">
 		<legend align="center"><h1><b>Locations</b></h1></legend>
+		<p><input type="text" placeholder="🔎Search for Location!" onkeyup="searchLocation(this)"></p>
+	    <p><div id="Search"></div></p>
 		<table border="2">
 			<tr>
 				<td>Location</td>
@@ -33,8 +35,8 @@ $location = getallLocation();
 				echo "<td>".$l["location"]."</td>";
 				echo "<td>".$l["information"]."</td>";
 				echo "<td><img width='80px' height='100px' src='".$l["locationPic"]."'</td>";
-				echo '<td><a href = "Editlocation.php?id='.$l["id"].'">Update</a></td>';
-				echo '<td><a href = "Deletelocation.php?id='.$l["id"].'">Delete</td>';
+				echo '<td><button><a id="b1" href = "Editlocation.php?id='.$l["id"].'">Update</a></button></td>';
+				echo '<td><button><a id="b1" href = "Deletelocation.php?id='.$l["id"].'">Delete</a></button></td>';
 				echo "</tr>";
             $i++;  
 			}
@@ -44,10 +46,11 @@ $location = getallLocation();
 
 
 		</table>
-		<a href="AddLocation.php">Add</a>
+		<button><a id="b1" href="AddLocation.php">Add</a></button>
 	</center>
 </form>
 </body>
+<script src="JavaScript/location.js"></script>
 </html>
 
 

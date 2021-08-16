@@ -52,9 +52,6 @@
 	$err_db="";
 	
 	$hasError=false;
-	
-	
-//--PHP Validations--//
 
 //--Travel Agency--//
 
@@ -1153,6 +1150,37 @@
 	}
 	
 	
+//--Login--//
+
+//--Admin Login--//
+	
+	if (isset($_POST["admin_login"])){
+		if(empty($_POST["username"])){
+			$hasError = true;
+			$err_username = "Username Required!";
+		}
+		else{
+			$username = $_POST["username"];
+		}
+		if(empty($_POST["password"])){
+			$hasError = true;
+			$err_password = "Password Required!";
+		}
+		else{
+			$password = $_POST["password"];
+		}
+		if(!$hasError){
+			if(authenticateAdmin($username,$password)){
+				$_SESSION["loggeduser"] = $username; //--Session--//
+				header("Location: Admin_Account.php");
+			}
+			if(authenticateAdmin($username,$password)){
+				setcookie("loggeduser1",$username,time()+600,"/"); //--Cookie--//
+				header("Location: Admin_Account.php"); 
+			}
+			$err_db = "Username or password maybe wrong!";
+		}
+	}
 	
 //--Admin Profile--//
 
@@ -1294,38 +1322,6 @@
 	}
 
 
-//--Login--//
-
-//--Admin Login--//
-	
-	if (isset($_POST["admin_login"])){
-		if(empty($_POST["username"])){
-			$hasError = true;
-			$err_username = "Username Required!";
-		}
-		else{
-			$username = $_POST["username"];
-		}
-		if(empty($_POST["password"])){
-			$hasError = true;
-			$err_password = "Password Required!";
-		}
-		else{
-			$password = $_POST["password"];
-		}
-		if(!$hasError){
-			if(authenticateAdmin($username,$password)){
-				$_SESSION["loggeduser"] = $username; //--Session--//
-				header("Location: Admin_Account.php");
-			}
-			if(authenticateAdmin($username,$password)){
-				setcookie("loggeduser1",$username,time()+300,"/");
-				header("Location: Admin_Account.php"); //--Cookie--//
-			}
-			$err_db = "Username or password maybe incorrect!";
-		}
-	}
-
 	
 //--Client Login--//
      
@@ -1346,15 +1342,16 @@
 		}
 		if(!$hasError){
 			if(authenticateClient($username,$password)){
-				setcookie("loggeduser",$username,time()+300,"/"); //--Cookie--//
-				header("Location: Client_Account.php"); 
+				setcookie("loggeduser",$username,time()+600,"/");
+				header("Location: Client_Account.php"); //--Cookie--//
 			}
-			$err_db = "Username or password maybe incorrect!";
+			$err_db = "Username or password maybe wrong!";
 		}
 	}
 	
 
 //--Travel Agency Login--//
+
 
     if (isset($_POST["travelagency_login"])){
 		if(empty($_POST["username"])){
@@ -1373,14 +1370,17 @@
 		}
 		if(!$hasError){
 			if(authenticateTravelAgency($username,$password)){
-				setcookie("loggeduser",$username,time()+300,"/"); //--Cookie--//
-				header("Location: TravelAgencyDashboard.php"); 
+				$_SESSION["loggeduser"] = $username;
+				header("Location: TravelAgencyDashboard.php"); //--Session--//
 			}
+
 			if(authenticateTravelAgency($username,$password)){
-				$_SESSION["loggeduser"] = $username; //--Session--//
-				header("Location: TravelAgencyDashboard.php");
+				setcookie("loggeduser",$username,time()+600,"/");
+				header("Location: TravelAgencyDashboard.php"); //--Cookie--//
 			}
-			$err_db = "Username or password maybe incorrect!";
+
+
+			$err_db = "Username or password maybe wrong!";
 		}
 	}
 	
@@ -1475,7 +1475,6 @@
 			$rs = get($query);
 			return $rs[0];
 	}
-	    
 		
 		function updateTravelAgency($username,$password,$name,$email,$phone,$etin,$id){
 			$query = "update travel_agency set username='$username',password='$password',name='$name',email='$email',phone='$phone',etin='$etin' where id= $id";
@@ -1559,7 +1558,7 @@
 //--Travel Agency--//
        
 	    function checkUsernameTravelAgency($username){
-		$query = "select * from travel_agency where username='$username'";
+		$query = "select name from travel_agency where username='$username'";
 		$rs = get($query);
 		if(count($rs) > 0){
 			return true;
@@ -1605,11 +1604,22 @@
 		return $rs;
 	}
 
-
 //--Travel Agency--//
 
-        function searchTravelAgency($travelagencykey){
+    function searchTravelAgency($travelagencykey){
 		$query = "select id,name from travel_agency where name like '%$travelagencykey%' or username like '%$travelagencykey%' or phone like '%$travelagencykey%' or email like '%$travelagencykey%' or etin like '%$travelagencykey%'";
+		$rs = get($query);
+		return $rs;
+	}
+
+	function searchLocation($locationkey){
+		$query = "select id,location from location where location like '%$locationkey%'";
+		$rs = get($query);
+		return $rs;
+	}
+
+	function searchPackages($packagekey){
+		$query = "select id,transport,price,location,hotel,room from packages where transport like '%$packagekey%' or price like '%$packagekey%' or location like '%$packagekey%' or hotel like '%$packagekey%' or room like '%$packagekey%'";;
 		$rs = get($query);
 		return $rs;
 	}

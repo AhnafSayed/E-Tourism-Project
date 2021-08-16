@@ -28,13 +28,13 @@
 		<img height="100px" width="100px" src="Storage/Header_image/Travel Agency.png" align="left"></a>
 		<table align="right" border="1"> 	
 			<tr>
-			<td align="center">
-			<a href="Home.php"><input type="Submit" id="b3" value="Home"></a>
-			<a href="TravelAgencyProfile.php"><input type="Submit" id="b3" value="Profile"></a>
+			<td>
+			<a href="Homepage.php"><input type="Submit" id="b3" value="Home"></a>
+		</td>
+		<td><a href="TravelAgencyDashboard.php"><input type="Submit" id="b3" value="Dashboard"></td>
 		<form action="logout.php" method="post">
-			<input type="Submit" id="b3" name="logout_btn" value="Logout">
+			<td><input type="Submit" id="b3" name="logout_btn" value="Logout"></td>
 		</form>
-            </td>
             </tr>			
         </table>			
 		</div>

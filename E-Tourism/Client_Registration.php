@@ -7,40 +7,41 @@
 	</head>
 	<body>
 		<center>
-		<form action="" onsubmit="return validateClient()" method="post">
+		<form action="" method="post">
 		<fieldset style="width: 800px; height: 500px;">
 		<legend align="center"><h1 id="b3"><b>Client Registration</b></h1></legend>
 			<table>
+
 				<tr>
 					<td><span >Username:</span></td>
 					<td></td>
-					<td><input id="username" type="text" onfocusout="checkUsernameClient(this)" name="username" value="<?php echo $username;?>"> </td><td><span id="err_username"><?php echo $err_username;?></span></td>
+					<td><input type="text" onfocusout="checkUsernameClient(this)" name="username" value="<?php echo $username;?>"> </td><td><span id="err_username"><?php echo $err_username;?></span></td>
 				</tr>
 
 				<tr>
 					<td><span>Password:</span></td>
 					<td></td>
-					<td><input id="password" type="password" name="password" value="<?php echo $password;?>"> </td><td><span id="err_password"><?php echo $err_password;?></span></td>
+					<td><input type="password" name="password" value="<?php echo $password;?>"> </td><td><span><?php echo $err_password;?></span></td>
 				</tr>
 
 				<tr>
 					<td><span>Confirm Password:</span></td>
 					<td></td>
-					<td><input id="confirmpassword" type="password" name="confirmpassword" value="<?php echo $confirmpassword;?>"> </td><td><span id="err_confirmpassword"><?php echo $err_confirmpassword;?></span></td>
+					<td><input type="password" name="confirmpassword" value="<?php echo $confirmpassword;?>"> </td><td><span><?php echo $err_confirmpassword;?></span></td>
 				</tr>
 
 
 				<tr>
 					<td><span >Name:</span></td>
 					<td></td>
-					<td><input id="name" type="text" name="name" value="<?php echo $name;?>"><td><span id="err_name"><?php echo $err_name;?></span></td>
+					<td><input type="text" name="name" value="<?php echo $name;?>"><td><span><?php echo $err_name;?></span></td>
 				</tr>
 
 				<tr>
 				<td><span>Gender:</span></td>
 				<td></td>
-				<td><input id="male" type="radio" name="gender" value="Male" <?php if($gender=="Male") echo "checked";?>><span>Male</span>
-				<input id="female" type="radio" name="gender" value="Female" <?php if($gender=="Female") echo "checked"; ?>><span>Female</span> </td><td><span id="err_gender"> <?php echo $err_gender;?></span></td><br>
+				<td><input type="radio" name="gender" value="Male"><span>Male</span>
+				<input type="radio" name="gender" value="Female"><span>Female</span> </td><td><span> <?php echo $err_gender;?></span></td><br>
 				</tr>
 
 				<tr>
@@ -82,7 +83,7 @@
 				<tr>
 					<td><span>Email:</span></td>
 					<td></td>
-					<td><input id="email" type="text" onfocusout="checkEmailClient(this)" size="25" name="email" value="<?php echo $email;?>"> </td><td><span id="err_email"><?php echo $err_email;?></span></td>
+					<td><input type="text" onfocusout="checkEmailClient(this)" size="25" name="email" value="<?php echo $email;?>"> </td><td><span id="err_email"><?php echo $err_email;?></span></td>
 				</tr>
 
 				<br>
@@ -91,40 +92,38 @@
 				<td><span>Address:</span></td>
 				<td></td>
 					<td>
-					<select id="city" name="city">
+					<select name="city">
 					<option disabled selected>City</option>
 					<?php
 						$cit= array("Dhaka","Barishal","Syhlet","Noakhali","Cumilla","Chandpur","Chittagong","Cox's Bazar","Rajshahi","Bhola","Mymensingh","Dinajpur","Pabna","Khulna");
-						for($l=0;$l<count($cit);$l++){
-							if($cit[$l] == $city) 
-								echo "<option selected>$cit[$l]</option>";
-							else
-							    echo "<option>$cit[$l]</option>";
+						for($l=0;$l<count($cit);$l++)
+						{
+							echo "<option>$cit[$l]</option>";
 						}
 					?>
 				</select>
 			    </td>
-			    <td><span id="err_city"> <?php echo $err_city;?> </span></td>
+			    <td><span> <?php echo $err_city;?> </span></td>
 			    </tr>
 
 			    <tr>
 			    	<td><span>State:</span></td>
 			    	<td></td>
-				<td><input id="state" align="right" type="text" name="state" placeholder = "State" size="10"></td><td><span id="err_state"><?php echo $err_state;?></span></td>
+				<td><input align="right" type="text" name="state" placeholder = "State" size="10"></td><td><span><?php echo $err_state;?></span></td>
 			    </tr>
 
 				<tr>
 					<td><span>Phone:</span></td>
 					<td></td>
-					<td><input id="phone" type="text" onfocusout="checkPhoneClient(this)" name="phone" value="<?php echo $phone;?>" placeholder = "Phone Number" size="12"> </td><td><span id="err_phone"><?php echo $err_phone;?></span></td>
+					<td><input type="text" onfocusout="checkPhoneClient(this)" name="phone" value="<?php echo $phone;?>" placeholder = "Phone Number" size="12"> </td><td><span id="err_phone"><?php echo $err_phone;?></span></td>
 				</tr>
+
 				<tr>
 				<td colspan="3" align="center">
 				<input id="b3" type="Submit" name="client_signup" value="Register">
 				</td>
 				</tr>
 			</table>
-			<h5><?php echo $err_db;?></h5>
 	</fieldset>
 		</form>
 		</center>
@@ -133,5 +132,4 @@
 <script src="JavaScript/CheckUsernameClient.js"></script>
 <script src="JavaScript/CheckEmailClient.js"></script>
 <script src="JavaScript/CheckPhoneClient.js"></script>
-<script src="JavaScript/ClientRegistrationValidation.js"></script>
 <?php include 'main_footer.php';?>

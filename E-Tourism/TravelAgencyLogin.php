@@ -6,7 +6,7 @@
 	<body>
 		<center>
 		<form action="" method="post">
-		<fieldset style="width:500px" "height:300px">
+		<fieldset style="width:500px; height:320px";>
 		<legend align="center"><h1><b id="b3">Travel Agency Login</b></h1></legend>
 			<table>			
 				<tr>
@@ -27,7 +27,7 @@
 				</tr>
 				<br>
 				<tr>
-				<td><h5>Don't have an account?</h5><a href="TravelAgency_Registration.php"><input id="b3" type="submit" value="Sign Up!"></h5></a></td>
+				<td><h5>Don't have an account?</h5><h5><button><a id="b3" href="TravelAgency_Registration.php">Sign Up!</a></button></h5></td>
 				</tr>
 			</table>
 			<h5><?php echo $err_db;?></h5>
@@ -36,3 +36,5 @@
 		</center>
 	</body>
 </html>
+
+<?php require_once 'main_footer.php';?>

@@ -36,6 +36,7 @@ var hasError=false;
 					hasError = true;
 					get("err_email").innerHTML= "*Email please!";
 				}
+
 				if(get("phone").value == ""){
 					hasError = true;
 					get("err_phone").innerHTML= "*Phone number please!";
@@ -66,3 +67,52 @@ var hasError=false;
 				get("err_phone").innerHTML= "";
 				get("err_etinum").innerHTML= "";
 			}
+
+
+			function checkUsername(i){
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET","checkAgencyUsername.php?username="+i.value,true);
+				xhr.onreadystatechange=function(){
+					if (this.readyState == 4 && this.status == 200) {
+					if(this.responseText.trim() == "invalid"){
+						get("err_username").innerHTML = "Username Exist!";
+					}
+					else{
+						get("err_username").innerHTML = "";
+					}
+				}
+			};
+			xhr.send();
+		}
+
+		function checkEmail(i){
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET","checkAgencyEmail.php?email="+i.value,true);
+				xhr.onreadystatechange=function(){
+					if (this.readyState == 4 && this.status == 200) {
+					if(this.responseText.trim() == "invalid"){
+						get("err_email").innerHTML = "Email Exist!";
+					}
+					else{
+						get("err_email").innerHTML = "";
+					}
+				}
+			};
+			xhr.send();
+		}
+
+		function checkEtin(i){
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET","checkAgencyEtin.php?etin="+i.value,true);
+				xhr.onreadystatechange=function(){
+					if (this.readyState == 4 && this.status == 200) {
+					if(this.responseText.trim() == "invalid"){
+						get("err_etinum").innerHTML = "ETIN Number Exist!";
+					}
+					else{
+						get("err_etinum").innerHTML = "";
+					}
+				}
+			};
+			xhr.send();
+		}

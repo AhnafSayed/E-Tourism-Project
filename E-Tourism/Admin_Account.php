@@ -16,6 +16,7 @@
 		<p id="b3"><?php echo $_COOKIE["loggeduser1"];?> You can check:</p><br><br><br>
 		<a href="ClientInformation.php"><input id="b3" type="Submit" value="Client Information"></a><br><br><br>
 		<a href="TravelAgencyInformation.php"><input id="b3" type="Submit" value="Travel Agency Information"></a><br><br><br>
+		<a href="HotelInformation.php"><input id="b3" type="Submit" value="Hotel Information"></a><br><br><br>
 </fieldset>
 </center>
 </body>
