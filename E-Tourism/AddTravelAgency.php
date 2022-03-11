@@ -16,7 +16,7 @@
 	<center>
 		<fieldset style="width: 800px; height: 500px;">
 		<legend align="center"><h1 id="b3"><b>Add Travel Agency</b></h1></legend>
-		<table>
+		<table id="b4">
 			    <tr>
 					<td><span>Travel Agency Name:</span></td>
 					<td><input id="name" type="text" name="name" value="<?php echo $name;?>">
@@ -25,7 +25,7 @@
 
 				<tr>
 					<td><span>Username:</span></td>
-					<td><input id="username" type="text" name="username" value="<?php echo $username;?>"> </td>
+					<td><input id="username" type="text" onfocusout="checkUsernameTravelAgency(this)" name="username" value="<?php echo $username;?>"> </td>
 					<td><span id="err_username"><?php echo $err_username;?></span></td>
 				</tr>
 
@@ -43,18 +43,18 @@
 
 				<tr>
 					<td><span>Email:</span></td>
-					<td><input id="email" type="text" size="25" name="email" value="<?php echo $email;?>"></td>
+					<td><input id="email" type="text" onfocusout="checkEmailTravelAgency(this)" size="25" name="email" value="<?php echo $email;?>"></td>
 					<td><span id="err_email"><?php echo $err_email;?></span></td>
 				</tr>
 				<tr>
 					<td><span>Phone:</span></td>
-					<td><input id="phone" type="text" name="phone" value="<?php echo $phone;?>" size="11"></td>
+					<td><input id="phone" type="text" onfocusout="checkPhoneTravelAgency(this)" name="phone" value="<?php echo $phone;?>" size="11"></td>
 					<td><span id="err_phone"></span><span><?php echo $err_phone;?></span></td>
 				</tr>
 
 				<tr>
 					<td><span>ETIN Number:</span></td>
-					<td><input id="etinum" type="text" name="etinnum" value="<?php echo $etin;?>"> </td>
+					<td><input id="etinum" type="text" onfocusout="checkETINTravelAgency(this)" name="etinnum" value="<?php echo $etin;?>"> </td>
 					<td><span id="err_etinum"><?php echo $err_etin;?></span></td>
 				</tr>
 		</table>

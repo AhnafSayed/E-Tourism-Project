@@ -16,7 +16,7 @@ if(!isset($_SESSION["loggeduser"])){
 		<fieldset style="width: 1000px; height: 800px;">
 		<legend align="center"><h1 id="b3"><b>Hotel Information</b></h1></legend>
 	    <p><div id="Search"></div></p>
-		<table border="2">
+		<table id="b4" border="2">
 			<tr>
 				<td>ID</td>
 				<td>Hotel</td>

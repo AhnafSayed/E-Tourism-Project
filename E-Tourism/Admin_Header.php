@@ -22,6 +22,11 @@
 			 color:orange;
 			 background-color:black;
 		    }
+		#b4{
+			color:blue;
+			font-style:oblique;
+		    font-weight:bold;
+		   }
 		body{
              background-image: url('Storage/Header_image/Keokradong.jpg');
              background-repeat: no-repeat;
@@ -38,11 +43,9 @@
 		<table align="center" border="1"> 	
 			<tr>
 			<td align="center">
-			<a href="ClientInformation.php" align="center"><input type="Submit" id="b3" value="Client Information"></a>
 			<a href="TravelAgencyInformation.php"><input type="Submit" id="b3" value="Travel Agency Information"></a>
 			<a href="HotelInformation.php"><input type="Submit" id="b3" value="Hotel Information"></a>
 			<a href="Admin_Account.php"><input type="Submit" id="b3" value="Admin Dashboard"></a>
-			<a href="AddClient.php"><input type="Submit" id="b3" value="Add Client"></a>
 			<a href="AddTravelAgency.php"><input type="Submit" id="b3" value="Add Travel Agency"></a>
 			<form action="AdminLogout.php" method="post">	
 			<input id="b3" type="Submit" name="Admin_Logout" value="Logout">

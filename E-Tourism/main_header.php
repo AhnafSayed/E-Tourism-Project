@@ -17,6 +17,11 @@
 			 color:orange;
 			 background-color:black;
 		    }
+		#b4{
+			color:blue;
+			font-style:oblique;
+		    font-weight:bold;
+		   }
          body{
              background-image: url('Storage/Header_image/CoxsBazar.jpg');
              background-repeat: no-repeat;

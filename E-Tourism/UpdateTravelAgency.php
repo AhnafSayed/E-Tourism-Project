@@ -18,7 +18,7 @@
 	<center>
 		<fieldset style="width: 800px; height: 500px;">
 		<legend align="center"><h1 id="b3"><b>Update Travel Agency</b></h1></legend>
-		<table>
+		<table id="b4">
 			<tr>
 				<td>Username</td>
 				<input type="hidden" name="id" value="<?php echo $t["Id"];?>">

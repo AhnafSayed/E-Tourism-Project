@@ -17,7 +17,7 @@ if(!isset($_SESSION["loggeduser"])){
 		<legend align="center"><h1 id="b3"><b>Travel Agency Information</b></h1></legend>
 		<p><input type="text" placeholder="🔎Search for Travel Agency!" size="23" onkeyup="searchTravelAgency(this)"></p>
 	    <p><div id="Search"></div></p>
-		<table border="2">
+		<table id="b4" border="2">
 			<tr>
 				<td>ID</td>
 				<td>Username</td>

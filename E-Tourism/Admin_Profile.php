@@ -44,7 +44,7 @@ if(!isset($_SESSION["loggeduser"])){
 			}
 			?>
 		</table>
-		<p><a href="AdminAccount.php"><input id="b3" type="Submit" value="Back"></a></p>
+		<p><a href="Admin_Account.php"><input id="b3" type="Submit" value="Back"></a></p>
 	</center>
 </form>
 </body>

@@ -17,7 +17,7 @@ if(!isset($_SESSION["loggeduser"])){
 		<legend align="center"><h1 id="b3"><b>Client Information</b></h1></legend>
 		<p><input type="text" placeholder="🔎Search for Client!" onkeyup="searchClient(this)"></p>
 	    <p><div id="Search"></div></p>
-		<table border="2">
+		<table id="b4" border="2">
 			<tr>
 				<td>ID</td>
 				<td>Username</td>
